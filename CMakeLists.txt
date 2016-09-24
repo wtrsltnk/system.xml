@@ -5,9 +5,7 @@ project(SystemXml)
 option(BUILD_TESTS "Build test programs" OFF)
 
 set(info
-    README.txt
-    TODO.txt
-    CHANGELOG.txt
+    README.md
 )
 
 set(SRC_CLIENT

@@ -93,7 +93,7 @@ int main(int argc, char* argv[])
 
     if (WSAStartup(MAKEWORD(2, 0), &wsaData) == 0)
     {
-        std::string  host = arg[1],
+        std::string  host = argv[1],
                 path = "/srvs/cgi-bin/axclientu.exe",
                 data = "";
         try
