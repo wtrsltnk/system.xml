@@ -453,7 +453,7 @@ void XmlAttribute::SetValue(const std::string& value)
  * XmlLinkedNode
  */
 XmlLinkedNode::XmlLinkedNode(XmlDocument* ownerDocument)
-    : XmlNode(ownerDocument), _next(0)
+    : XmlNode(ownerDocument), _next(nullptr)
 { }
 
 XmlLinkedNode::~XmlLinkedNode()
