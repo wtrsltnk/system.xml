@@ -8,7 +8,7 @@
 #include <cctype>
 #include <locale>
 
-using namespace xml;
+using namespace System::Xml;
 
 /*
  * XmlNodeList
@@ -346,6 +346,23 @@ XmlNode* XmlNode::RemoveChild(XmlNode* child)
     childNode->_parentNode = 0;
 
     return childNode;
+}
+
+XmlNodeList* XmlNode::SelectNodes(const std::string& xpath)
+{
+    return nullptr;
+}
+
+XmlNode* XmlNode::SelectSingleNode(const std::string& xpath)
+{
+    XmlNodeList* list = SelectNodes(xpath);
+
+    if (list != nullptr)
+    {
+        return list->Item(0);
+    }
+    
+    return nullptr;
 }
 
 XmlNode* XmlNode::FindChild(XmlNodeType::Type type)

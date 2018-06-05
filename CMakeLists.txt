@@ -1,28 +1,31 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 
-project(SystemXml)
+project(system.xml)
 
 option(BUILD_TESTS "Build test programs" OFF)
 
-set(info
+add_executable(system.xml
     README.md
-)
-
-set(SRC_CLIENT
     src/program.cpp
     src/xml.cpp
-)
-
-if(BUILD_TESTS)
-    set(SRC_XML_TESTS
-        src/xml.cpp
-        src/test_framework.cpp
     )
-endif(BUILD_TESTS)
 
-add_executable(SystemXml ${SRC_CLIENT} ${info})
-target_link_libraries(SystemXml wsock32.lib)
+target_include_directories(system.xml
+    PUBLIC include
+    )
+
+target_link_libraries(system.xml
+    wsock32.lib
+    )
 
 if(BUILD_TESTS)
-    add_executable(xml-tests ${SRC_XML_TESTS} ${info})
+    add_executable(xml-tests
+        src/xml.cpp
+        tests/catch.cpp
+        tests/xml-tests.cpp
+        )
+
+    target_include_directories(xml-tests
+        PUBLIC include
+        )
 endif(BUILD_TESTS)

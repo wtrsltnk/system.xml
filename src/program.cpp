@@ -94,7 +94,7 @@ int main(int argc, char* argv[])
     if (WSAStartup(MAKEWORD(2, 0), &wsaData) == 0)
     {
         std::string  host = argv[1],
-                path = "/srvs/cgi-bin/axclientu.exe",
+                path = "/srvs/iq.exe",
                 data = "";
         try
         {
@@ -109,13 +109,12 @@ int main(int argc, char* argv[])
             std::cout << "response: " << std::endl;
             std::cout << response << std::endl;
 
-            xml::XmlDocument doc;
+            System::Xml::XmlDocument doc;
             doc.LoadXml(std::string("<!DOCTYPE html><?xml version=\"1.0\"?><!-- test comment -->") + response);
-            xml::XmlWriter writer;
+            System::Xml::XmlWriter writer;
             std::cout << writer.Write(doc) << std::endl;
-
         }
-        catch (const xml::XmlException& ex)
+        catch (const System::Xml::XmlException& ex)
         {
             std::cout << "XmlException : " << ex.Message() << std::endl;
         }

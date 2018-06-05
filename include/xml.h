@@ -6,7 +6,9 @@
 #include <string>
 #include <fstream>
 
-namespace xml
+namespace System
+{
+namespace Xml
 {
 
 namespace XmlNodeType
@@ -214,7 +216,7 @@ public:
     XmlNode* RemoveChild(XmlNode* child);
 
     //Selects a list of nodes matching the XPath expression.
-    class XmlNodeList SelectNodes(const std::string& xpath);
+    class XmlNodeList* SelectNodes(const std::string& xpath);
 
     //Selects a list of nodes matching the XPath expression.
     XmlNode* SelectSingleNode(const std::string& xpath);
@@ -710,6 +712,8 @@ public:
 
     const std::string& Prefix() const { return this->_prefix; }
 };
+
+}
 
 }
 
