@@ -89,6 +89,12 @@ void ReplaceAll(std::string& str, const std::string& from, const std::string& to
 
 int main(int argc, char* argv[])
 {
+    auto docc = System::Xml::XmlDocument();
+    docc.LoadXml("<item class=\"attr value\"><name>wrench</name><length>2.4</length></item>");
+
+    std::cout << docc.DocumentElement()->Attributes()[0]->Value() << std::endl;
+    std::cout << docc.DocumentElement()->Attributes()[1]->Value() << std::endl;
+    
     WSADATA wsaData;
 
     if (WSAStartup(MAKEWORD(2, 0), &wsaData) == 0)
