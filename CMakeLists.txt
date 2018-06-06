@@ -4,18 +4,45 @@ project(system.xml)
 
 option(BUILD_TESTS "Build test programs" OFF)
 
-add_executable(system.xml
-    README.md
-    src/program.cpp
-    src/xml.cpp
+add_library(system.xml
+    src/XmlAttribute.cpp
+    src/XmlAttributeCollection.cpp
+    src/XmlCDataSection.cpp
+    src/XmlCharacterData.cpp
+    src/XmlComment.cpp
+    src/XmlDocument.cpp
+    src/XmlDocumentType.cpp
+    src/XmlElement.cpp
+    src/XmlException.cpp
+    src/XmlLinkedNode.cpp
+    src/XmlLoader.cpp
+    src/XmlLoader.h
+    src/XmlName.cpp
+    src/XmlNode.cpp
+    src/XmlNodeList.cpp
+    src/XmlProcessingInstruction.cpp
+    src/xmlstream.hpp
+    src/XmlText.cpp
+    src/XmlWriter.cpp
+    src/XmlWriter.h
     )
 
 target_include_directories(system.xml
     PUBLIC include
     )
 
-target_link_libraries(system.xml
+add_executable(system.xml.example
+    README.md
+    src/program.cpp
+    )
+
+target_include_directories(system.xml.example
+    PUBLIC include
+    )
+
+target_link_libraries(system.xml.example
     wsock32.lib
+    system.xml
     )
 
 if(BUILD_TESTS)
@@ -27,5 +54,9 @@ if(BUILD_TESTS)
 
     target_include_directories(xml-tests
         PUBLIC include
+        )
+
+    target_link_libraries(xml-tests
+        system.xml
         )
 endif(BUILD_TESTS)

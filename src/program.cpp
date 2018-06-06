@@ -111,8 +111,6 @@ int main(int argc, char* argv[])
 
             System::Xml::XmlDocument doc;
             doc.LoadXml(std::string("<!DOCTYPE html><?xml version=\"1.0\"?><!-- test comment -->") + response);
-            System::Xml::XmlWriter writer;
-            std::cout << writer.Write(doc) << std::endl;
         }
         catch (const System::Xml::XmlException& ex)
         {
