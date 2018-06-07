@@ -1,6 +1,6 @@
-#include <XmlNode.h>
-#include <XmlDocument.h>
-#include <XmlException.h>
+#include <xml/XmlNode.h>
+#include <xml/XmlDocument.h>
+#include <xml/XmlException.h>
 #include <sstream>
 
 using namespace System::Xml;

@@ -1,8 +1,8 @@
 #ifndef XMLLOADER_H
 #define XMLLOADER_H
 
-#include <XmlDocument.h>
-#include <XmlAttributeCollection.h>
+#include <xml/XmlDocument.h>
+#include <xml/XmlAttributeCollection.h>
 #include <istream>
 #include <string>
 #include <map>

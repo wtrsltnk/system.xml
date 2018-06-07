@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <winsock.h>
 
-#include "xml.h"
+#include "System.Xml.h"
 
 #define BUFFERSIZE 2
 
@@ -89,7 +89,7 @@ void ReplaceAll(std::string& str, const std::string& from, const std::string& to
 
 int main(int argc, char* argv[])
 {
-    auto docc = System::Xml::XmlDocument();
+    System::Xml::XmlDocument docc;
     docc.LoadXml("<item class=\"attr value\"><name>wrench</name><length>2.4</length></item>");
 
     std::cout << docc.DocumentElement()->Attributes()[0]->Value() << std::endl;

@@ -1,4 +1,4 @@
-#include <XmlDocument.h>
+#include <xml/XmlDocument.h>
 #include <sstream>
 #include "XmlLoader.h"
 

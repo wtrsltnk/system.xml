@@ -21,7 +21,6 @@ add_library(system.xml
     src/XmlNode.cpp
     src/XmlNodeList.cpp
     src/XmlProcessingInstruction.cpp
-    src/xmlstream.hpp
     src/XmlText.cpp
     src/XmlWriter.cpp
     src/XmlWriter.h
@@ -29,6 +28,11 @@ add_library(system.xml
 
 target_include_directories(system.xml
     PUBLIC include
+    )
+
+target_compile_features(system.xml
+    PRIVATE cxx_auto_type
+    PRIVATE cxx_nullptr
     )
 
 add_executable(system.xml.example

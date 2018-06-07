@@ -1,5 +1,5 @@
-#include <XmlComment.h>
-#include <XmlDocument.h>
+#include <xml/XmlComment.h>
+#include <xml/XmlDocument.h>
 
 using namespace System::Xml;
 

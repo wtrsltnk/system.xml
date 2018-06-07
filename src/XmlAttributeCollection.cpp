@@ -1,5 +1,5 @@
-#include <XmlAttributeCollection.h>
-#include <XmlDocument.h>
+#include <xml/XmlAttributeCollection.h>
+#include <xml/XmlDocument.h>
 
 using namespace System::Xml;
 

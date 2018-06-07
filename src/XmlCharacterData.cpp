@@ -1,5 +1,5 @@
-#include <XmlCharacterData.h>
-#include <XmlDocument.h>
+#include <xml/XmlCharacterData.h>
+#include <xml/XmlDocument.h>
 
 using namespace System::Xml;
 

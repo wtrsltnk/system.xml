@@ -1,7 +1,7 @@
 #include "XmlLoader.h"
-#include <XmlUnexpectedClosingTagException.h>
-#include <XmlUnexpectedEndOfFileException.h>
-#include <XmlUndefinedNamespaceFoundException.h>
+#include <xml/XmlUnexpectedClosingTagException.h>
+#include <xml/XmlUnexpectedEndOfFileException.h>
+#include <xml/XmlUndefinedNamespaceFoundException.h>
 #include <cstring>
 
 using namespace System::Xml;
