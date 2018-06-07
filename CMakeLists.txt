@@ -50,17 +50,17 @@ target_link_libraries(system.xml.example
     )
 
 if(BUILD_TESTS)
-    add_executable(xml-tests
-        src/xml.cpp
+    add_executable(system.xml.tests
         tests/catch.cpp
         tests/xml-tests.cpp
         )
 
-    target_include_directories(xml-tests
-        PUBLIC include
+    target_link_libraries(system.xml.tests
+        system.xml
         )
 
-    target_link_libraries(xml-tests
-        system.xml
+    target_compile_features(system.xml.tests
+        PRIVATE cxx_auto_type
+        PRIVATE cxx_nullptr
         )
 endif(BUILD_TESTS)

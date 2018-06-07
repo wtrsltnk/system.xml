@@ -1,5 +1,5 @@
 #include "catch.hpp"
-#include "xml.h"
+#include "System.Xml.h"
 
 TEST_CASE("Attributes should work", "[xml]")
 {
