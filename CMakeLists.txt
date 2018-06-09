@@ -33,6 +33,7 @@ target_include_directories(system.xml
 target_compile_features(system.xml
     PRIVATE cxx_auto_type
     PRIVATE cxx_nullptr
+    PRIVATE cxx_range_for
     )
 
 add_executable(system.xml.example

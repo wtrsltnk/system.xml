@@ -8,6 +8,7 @@
 #include "xml/XmlComment.h"
 #include "xml/XmlDocument.h"
 #include "xml/XmlDocumentType.h"
+#include "xml/XmlDuplicateAttributesFoundException.h"
 #include "xml/XmlElement.h"
 #include "xml/XmlException.h"
 #include "xml/XmlLinkedNode.h"
@@ -18,6 +19,7 @@
 #include "xml/XmlProcessingInstruction.h"
 #include "xml/XmlText.h"
 #include "xml/XmlUndefinedNamespaceFoundException.h"
+#include "xml/XmlUnexpectedCharacterException.h"
 #include "xml/XmlUnexpectedClosingTagException.h"
 #include "xml/XmlUnexpectedEndOfFileException.h"
 
