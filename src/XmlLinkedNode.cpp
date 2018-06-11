@@ -1,36 +1,38 @@
-#include <xml/XmlLinkedNode.h>
 #include <xml/XmlDocument.h>
+#include <xml/XmlLinkedNode.h>
 
 using namespace System::Xml;
 
-XmlLinkedNode::XmlLinkedNode(XmlDocument* ownerDocument)
+XmlLinkedNode::XmlLinkedNode(XmlDocument *ownerDocument)
     : XmlNode(ownerDocument), _next(nullptr)
-{ }
+{}
 
 XmlLinkedNode::~XmlLinkedNode()
-{ }
+{}
 
-XmlNode* XmlLinkedNode::PreviousSibling()
+XmlNode *XmlLinkedNode::PreviousSibling()
 {
-    XmlNode* parent = this->ParentNode();
-    if (parent != 0)
+    XmlNode *parent = this->ParentNode();
+    if (parent == 0)
     {
-        XmlNode* node = parent->FirstChild();
-        while (node != 0)
-        {
-            XmlNode* nextSibling = node->NextSibling();
-            if (nextSibling == this || nextSibling == 0)
-                break;
-            node = nextSibling;
-        }
-        return node;
+        return 0;
     }
-    return 0;
+
+    XmlNode *node = parent->FirstChild();
+    while (node != 0)
+    {
+        XmlNode *nextSibling = node->NextSibling();
+        if (nextSibling == this || nextSibling == 0)
+            break;
+        node = nextSibling;
+    }
+
+    return node;
 }
 
-XmlNode* XmlLinkedNode::NextSibling()
+XmlNode *XmlLinkedNode::NextSibling()
 {
-    XmlNode* parent = this->ParentNode();
+    XmlNode *parent = this->ParentNode();
     if (parent != 0)
     {
         if (this != parent->LastChild())

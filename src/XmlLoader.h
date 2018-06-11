@@ -28,8 +28,6 @@ private:
 
     void parseEntityDeclaration(XmlNode *node, std::istream &fr);
     void parseTextDeclaration(XmlNode *node, std::istream &fr);
-    std::string parseTagName(std::istream &fr);
-    std::map<std::string, std::string> parseAttributes(std::istream &fr);
     XmlNode *createNode(XmlNode *currentNode, std::string const &tagName, std::map<std::string, std::string> const &attrs);
     XmlAttribute *createAttribute(XmlNode *currentNode, std::string const &key, std::string const &val);
 };

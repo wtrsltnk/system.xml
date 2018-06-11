@@ -2,18 +2,18 @@
 
 using namespace System::Xml;
 
-XmlException::XmlException(const std::string& message)
+XmlException::XmlException(const std::string &message)
     : _message(message)
-{ }
+{}
 
-XmlException::XmlException(const XmlException& other)
+XmlException::XmlException(const XmlException &other)
     : _message(other.Message())
-{ }
+{}
 
 XmlException::~XmlException()
-{ }
+{}
 
-const std::string& XmlException::Message() const
+const std::string &XmlException::Message() const
 {
     return this->_message;
 }

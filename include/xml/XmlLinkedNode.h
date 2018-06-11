@@ -3,16 +3,15 @@
 
 #include "XmlNode.h"
 
-namespace System
-{
-namespace Xml
-{
+namespace System {
+namespace Xml {
 
 class XmlLinkedNode : public XmlNode
 {
     friend class XmlNode;
+
 protected:
-    XmlLinkedNode(class XmlDocument* doc);
+    XmlLinkedNode(class XmlDocument *doc);
 
 public:
     virtual ~XmlLinkedNode();
@@ -20,22 +19,21 @@ public:
     // Properties
 public:
     // Gets the node immediately following this node.
-    virtual XmlNode* NextSibling();
+    virtual XmlNode *NextSibling();
 
     // Gets the node immediately preceding this node.
-    virtual XmlNode* PreviousSibling();
+    virtual XmlNode *PreviousSibling();
 
     // Methods
 public:
     // Adds the specified node to the end of the list of child nodes, of this node.
-    void AppendChild(XmlNode* child);
+    void AppendChild(XmlNode *child);
 
 private:
-    XmlLinkedNode* _next;
-
+    XmlLinkedNode *_next;
 };
 
-}
-}
+} // namespace Xml
+} // namespace System
 
 #endif // XMLLINKEDNODE_H

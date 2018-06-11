@@ -3,17 +3,15 @@
 
 #include <vector>
 
-namespace System
-{
-namespace Xml
-{
+namespace System {
+namespace Xml {
 
-class XmlNodeList : std::vector<class XmlNode*>
+class XmlNodeList : std::vector<class XmlNode *>
 {
-    friend class XmlNode;   // This makes iterating over this std::vector easier
+    friend class XmlNode; // This makes iterating over this std::vector easier
 public:
     XmlNodeList();
-    XmlNodeList(class XmlNode* node);
+    XmlNodeList(class XmlNode *node);
     virtual ~XmlNodeList();
 
     // Properties
@@ -22,16 +20,15 @@ public:
     int Count();
 
     // Gets a node at the given index.
-    class XmlNode* operator[](int index);
+    class XmlNode *operator[](int index);
 
     // Methods
 public:
     // Retrieves a node at the given index.
-    class XmlNode* Item(int index);
-
+    class XmlNode *Item(int index);
 };
 
-}
-}
+} // namespace Xml
+} // namespace System
 
 #endif // XMLNODELIST_H

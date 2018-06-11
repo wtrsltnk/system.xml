@@ -4,12 +4,12 @@
 using namespace System::Xml;
 
 XmlWriter::XmlWriter()
-{ }
+{}
 
 XmlWriter::~XmlWriter()
-{ }
+{}
 
-std::string XmlWriter::Write(XmlDocument& doc)
+std::string XmlWriter::Write(XmlDocument &doc)
 {
     std::stringstream result;
 
@@ -21,23 +21,26 @@ std::string XmlWriter::Write(XmlDocument& doc)
 }
 
 // trim from start
-static inline std::string &ltrim(std::string &s) {
+static inline std::string &ltrim(std::string &s)
+{
     s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
     return s;
 }
 
 // trim from end
-static inline std::string &rtrim(std::string &s) {
+static inline std::string &rtrim(std::string &s)
+{
     s.erase(std::find_if(s.rbegin(), s.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
     return s;
 }
 
 // trim from both ends
-static inline std::string &trim(std::string &s) {
+static inline std::string &trim(std::string &s)
+{
     return ltrim(rtrim(s));
 }
 
-void XmlWriter::WriteNode(XmlNode* node, std::stringstream& result, int depth)
+void XmlWriter::WriteNode(XmlNode *node, std::stringstream &result, int depth)
 {
     if (node->NodeType() == XmlNodeType::Element)
     {
@@ -53,11 +56,11 @@ void XmlWriter::WriteNode(XmlNode* node, std::stringstream& result, int depth)
             result << " " << attrs.ItemAt(i)->Name() << "=\"" << attrs.ItemAt(i)->Value() << "\"";
         if (children.Count() == 0)
         {
-            result<< " />";
+            result << " />";
         }
         else
         {
-            result<< ">";
+            result << ">";
 
             for (int i = 0; i < children.Count(); i++)
                 this->WriteNode(children[i], result, depth + 1);
@@ -98,7 +101,7 @@ void XmlWriter::WriteNode(XmlNode* node, std::stringstream& result, int depth)
     }
     else if (node->NodeType() == XmlNodeType::DocumentType)
     {
-        XmlDocumentType* docType = (XmlDocumentType*)node;
+        XmlDocumentType *docType = (XmlDocumentType *)node;
         result << std::endl;
         for (int i = 0; i < depth; i++)
             result << "\t";

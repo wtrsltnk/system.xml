@@ -46,6 +46,137 @@ void checkUnexpectedCharacter(char c, char expected)
     }
 }
 
+char skipSpaces(std::istream &fr)
+{
+    char c = fr.get();
+
+    // Skip all spaces until we reach '>' or an attribute
+    while (c <= ' ')
+    {
+        checkUnexpectedEnd(c);
+        c = fr.get();
+    }
+
+    return c;
+}
+
+std::string parseTagName(std::istream &fr)
+{
+    std::string data;
+
+    char c;
+    while (fr.peek() > ' ' && fr.peek() != '>')
+    {
+        c = fr.get();
+        checkUnexpectedEnd(c);
+
+        data += c;
+    }
+
+    return data;
+}
+
+std::map<std::string, std::string> parseAttributes(std::istream &fr)
+{
+    std::map<std::string, std::string> attrs;
+
+    char c = skipSpaces(fr);
+
+    while (c != '>')
+    {
+        checkUnexpectedEnd(c);
+        // Skip all spaces until we reach '>' or an attribute
+
+        std::string key;
+        while (c != '=')
+        {
+            checkUnexpectedEnd(c);
+            if (c > ' ')
+            {
+                key += c;
+            }
+            c = fr.get();
+        }
+
+        if (attrs.find(key) != attrs.end())
+        {
+            throw XmlDuplicateAttributesFoundException();
+        }
+
+        std::string val;
+        c = fr.get();
+        if (c == '\"')
+        {
+            c = fr.get();
+            while (c != '\"')
+            {
+                checkUnexpectedEnd(c);
+                val += c;
+                c = fr.get();
+            }
+        }
+        else
+        {
+            while (c > ' ' && c != '>')
+            {
+                checkUnexpectedEnd(c);
+                val += c;
+                c = fr.get();
+            }
+        }
+        checkUnexpectedEnd(c);
+
+        attrs.insert(std::make_pair(key, val));
+
+        c = skipSpaces(fr);
+    }
+
+    return attrs;
+}
+
+void expectedTextOrThrow(std::istream &fr, std::string const &text)
+{
+    for (auto e : text)
+    {
+        char c = fr.get();
+        if (e != c)
+        {
+            throw XmlUnexpectedCharacterException(c, e);
+        }
+    }
+}
+
+bool endsWith(std::string const &subject, std::string const &end)
+{
+    if (subject.find(end) != std::string::npos)
+    {
+        return subject.find(end) == (subject.size() - end.size());
+    }
+
+    return false;
+}
+
+std::string getDataUntil(std::istream &fr, std::string const &text)
+{
+    bool atEnd = false;
+    char c = fr.get();
+    std::string data;
+
+    while (!atEnd)
+    {
+        checkUnexpectedEnd(c);
+        data += c;
+        if (endsWith(data, text))
+        {
+            atEnd = true;
+            break;
+        }
+        c = fr.get();
+    }
+
+    return data.substr(0, data.size() - text.size());
+}
+
 void XmlLoader::Load(XmlDocument &doc, std::istream &fr)
 {
     char c = fr.get();
@@ -58,10 +189,9 @@ void XmlLoader::Load(XmlDocument &doc, std::istream &fr)
         {
             if (data.size() > 0)
             {
-                // todo create textnode from data before the tag
-                data = "";
                 auto textNode = node->OwnerDocument()->CreateTextNode(data);
                 node->AppendChild(textNode);
+                data = "";
             }
 
             if (fr.peek() == '!') // This is a entity declaration
@@ -80,21 +210,17 @@ void XmlLoader::Load(XmlDocument &doc, std::istream &fr)
                 {
                     throw XmlUnexpectedClosingTagException();
                 }
-                c = fr.get();
+                c = skipSpaces(fr);
                 if (c != '>')
                 {
                     throw XmlUnexpectedCharacterException(c, '>');
                 }
-                std::cout << "close tag " << tagName << std::endl;
-
                 node = node->ParentNode();
             }
             else // This is a start tag
             {
                 auto tagName = parseTagName(fr);
                 auto attributes = parseAttributes(fr);
-
-                std::cout << "Open tag " << tagName << std::endl;
 
                 node = createNode(node, tagName, attributes);
             }
@@ -152,127 +278,6 @@ XmlAttribute *XmlLoader::createAttribute(XmlNode *currentNode, std::string const
     currentNode->Attributes().Append(attr);
 
     return attr;
-}
-
-std::string XmlLoader::parseTagName(std::istream &fr)
-{
-    std::string data;
-
-    char c;
-    while (fr.peek() != ' ' && fr.peek() != '>')
-    {
-        c = fr.get();
-        checkUnexpectedEnd(c);
-
-        data += c;
-    }
-
-    return data;
-}
-
-std::map<std::string, std::string> XmlLoader::parseAttributes(std::istream &fr)
-{
-    std::map<std::string, std::string> attrs;
-
-    char c = fr.get();
-    while (c != '>')
-    {
-        checkUnexpectedEnd(c);
-        // Skip all spaces until we reach '>' or an attribute
-        while (c < ' ')
-        {
-            checkUnexpectedEnd(c);
-            c = fr.get();
-        }
-
-        std::string key;
-        while (c != '=')
-        {
-            checkUnexpectedEnd(c);
-            if (c > ' ')
-            {
-                key += c;
-            }
-            c = fr.get();
-        }
-
-        if (attrs.find(key) != attrs.end())
-        {
-            throw XmlDuplicateAttributesFoundException();
-        }
-
-        std::string val;
-        c = fr.get();
-        if (c == '\"')
-        {
-            c = fr.get();
-            while (c != '\"')
-            {
-                checkUnexpectedEnd(c);
-                val += c;
-                c = fr.get();
-            }
-        }
-        else
-        {
-            while (c > ' ' && c != '>')
-            {
-                checkUnexpectedEnd(c);
-                val += c;
-                c = fr.get();
-            }
-        }
-        checkUnexpectedEnd(c);
-
-        attrs.insert(std::make_pair(key, val));
-
-        c = fr.get();
-    }
-
-    return attrs;
-}
-
-void expectedTextOrThrow(std::istream &fr, std::string const &text)
-{
-    for (auto e : text)
-    {
-        char c = fr.get();
-        if (e != c)
-        {
-            throw XmlUnexpectedCharacterException(c, e);
-        }
-    }
-}
-
-bool endsWith(std::string const &subject, std::string const &end)
-{
-    if (subject.find(end) != std::string::npos)
-    {
-        return subject.find(end) == (subject.size() - end.size());
-    }
-
-    return false;
-}
-
-std::string getDataUntil(std::istream &fr, std::string const &text)
-{
-    bool atEnd = false;
-    char c = fr.get();
-    std::string data;
-
-    while (!atEnd)
-    {
-        checkUnexpectedEnd(c);
-        data += c;
-        if (endsWith(data, text))
-        {
-            atEnd = true;
-            break;
-        }
-        c = fr.get();
-    }
-
-    return data.substr(0, data.size() - text.size());
 }
 
 void XmlLoader::parseEntityDeclaration(XmlNode *node, std::istream &fr)
