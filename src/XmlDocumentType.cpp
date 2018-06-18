@@ -1,5 +1,5 @@
-#include <xml/XmlDocument.h>
-#include <xml/XmlDocumentType.h>
+#include <system.xml/XmlDocument.h>
+#include <system.xml/XmlDocumentType.h>
 
 using namespace System::Xml;
 

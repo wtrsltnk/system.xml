@@ -3,11 +3,11 @@
 #include <cstring>
 #include <iostream>
 #include <locale>
-#include <xml/XmlDuplicateAttributesFoundException.h>
-#include <xml/XmlUndefinedNamespaceFoundException.h>
-#include <xml/XmlUnexpectedCharacterException.h>
-#include <xml/XmlUnexpectedClosingTagException.h>
-#include <xml/XmlUnexpectedEndOfFileException.h>
+#include <system.xml/XmlDuplicateAttributesFoundException.h>
+#include <system.xml/XmlUndefinedNamespaceFoundException.h>
+#include <system.xml/XmlUnexpectedCharacterException.h>
+#include <system.xml/XmlUnexpectedClosingTagException.h>
+#include <system.xml/XmlUnexpectedEndOfFileException.h>
 
 using namespace System::Xml;
 

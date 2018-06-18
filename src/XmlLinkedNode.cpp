@@ -1,5 +1,5 @@
-#include <xml/XmlDocument.h>
-#include <xml/XmlLinkedNode.h>
+#include <system.xml/XmlDocument.h>
+#include <system.xml/XmlLinkedNode.h>
 
 using namespace System::Xml;
 

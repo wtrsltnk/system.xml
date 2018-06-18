@@ -1,6 +1,7 @@
 #include "XmlLoader.h"
 #include <sstream>
-#include <xml/XmlDocument.h>
+#include <fstream>
+#include <system.xml/XmlDocument.h>
 
 using namespace System::Xml;
 
@@ -103,6 +104,23 @@ XmlText *XmlDocument::CreateTextNode(const std::string &text)
 XmlName XmlDocument::AddXmlName(const std::string &prefix, const std::string &localName, const std::string &ns)
 {
     return XmlName(prefix, localName, ns, this);
+}
+
+#include <iostream>
+
+void XmlDocument::Load(const std::string &filename)
+{
+    std::ifstream file(filename);
+
+    if (file.is_open())
+    {
+        XmlLoader loader;
+        loader.Load(*this, file);
+    }
+    else
+    {
+        std::cout << "load failed/n/n";
+    }
 }
 
 void XmlDocument::LoadXml(const std::string &xml)

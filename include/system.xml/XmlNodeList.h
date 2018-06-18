@@ -6,7 +6,7 @@
 namespace System {
 namespace Xml {
 
-class XmlNodeList : std::vector<class XmlNode *>
+class XmlNodeList : public std::vector<class XmlNode *>
 {
     friend class XmlNode; // This makes iterating over this std::vector easier
 public:
