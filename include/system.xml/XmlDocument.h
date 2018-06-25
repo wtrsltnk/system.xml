@@ -1,26 +1,23 @@
 #ifndef XMLDOCUMENT_H
 #define XMLDOCUMENT_H
 
-#include "XmlNode.h"
-#include "XmlNodeType.h"
 #include "XmlAttribute.h"
-#include "XmlDocumentType.h"
 #include "XmlCDataSection.h"
 #include "XmlComment.h"
+#include "XmlDocumentType.h"
+#include "XmlElement.h"
+#include "XmlNode.h"
+#include "XmlNodeType.h"
 #include "XmlProcessingInstruction.h"
 #include "XmlText.h"
-#include "XmlElement.h"
-
 #include <string>
+#include <system.xml/XmlNameTable.h>
 
-namespace System
-{
-namespace Xml
-{
+namespace System {
+namespace Xml {
 
 class XmlDocument : public XmlNode
 {
-protected:
 public:
     XmlDocument();
     virtual ~XmlDocument();
@@ -28,55 +25,55 @@ public:
     // Properties
 public:
     // Gets the root XmlElement for the document.
-    XmlElement* DocumentElement();
+    XmlElement *DocumentElement();
 
     // Gets the node containing the DOCTYPE declaration.
-    XmlDocumentType* DocumentType();
+    XmlDocumentType *DocumentType();
 
     // Gets the local name of the node. (Overrides XmlNode.LocalName.)
-    const std::string& LocalName() const;
+    const std::string &LocalName() const;
 
     // Gets the qualified name of the node. (Overrides XmlNode.Name.)
-    const std::string& Name() const;
+    const std::string &Name() const;
 
     // Gets the namespace URI of this node.
-    virtual const std::string& NamespaceURI() const;
+    virtual const std::string &NamespaceURI() const;
 
     // Gets the type of the current node.
     virtual XmlNodeType::Type NodeType() { return XmlNodeType::Document; }
 
     // Gets or sets the namespace prefix of this node.
-    virtual const std::string& Prefix() const;
-    virtual void SetPrefix(const std::string& prefix);
+    virtual const std::string &Prefix() const;
+    virtual void SetPrefix(const std::string &prefix);
 
     // Methods
 public:
     // Loads the XML document from the specified URL.
-    void Load(const std::string& filename);
+    void Load(const std::string &filename);
 
     // Loads the XML document from the specified string.
-    void LoadXml(const std::string& xml);
+    void LoadXml(const std::string &xml);
 
     // Saves the XML document to the specified file. If the specified file exists, this method overwrites it.
-    void Save(const std::string& filename);
+    void Save(const std::string &filename);
 
     // Static Methods
 public:
     // Creates an XmlAttribute with the specified Name.
-    XmlAttribute* CreateAttribute(const std::string& name);
+    XmlAttribute *CreateAttribute(const std::string &name);
 
     // Creates an XmlAttribute with the specified qualified name and NamespaceURI.
-    XmlAttribute* CreateAttribute(const std::string& name, const std::string& namespaceURI);
+    XmlAttribute *CreateAttribute(const std::string &name, const std::string &namespaceURI);
 
     // Creates an XmlAttribute with the specified Prefix, LocalName, and NamespaceURI.
-    XmlAttribute* CreateAttribute(const std::string& prefix, const std::string& localName, const std::string& namespaceURI);
+    XmlAttribute *CreateAttribute(const std::string &prefix, const std::string &localName, const std::string &namespaceURI);
 
     // Creates an XmlCDataSection containing the specified data.
-    XmlCDataSection* CreateCDataSection(const std::string& text = "");
+    XmlCDataSection *CreateCDataSection(const std::string &text = "");
 
     // Creates an XmlComment containing the specified data.
-    XmlComment* CreateComment(const std::string& text = "");
-/*
+    XmlComment *CreateComment(const std::string &text = "");
+    /*
     // Creates a default attribute with the specified prefix, local name and namespace URI.
     CreateDefaultAttribute
 
@@ -84,35 +81,35 @@ public:
     CreateDocumentFragment
 */
     // Returns a new XmlDocumentType object.
-    XmlDocumentType* CreateDocumentType(const std::string& name, const std::string& publicId, const std::string& systemId, const std::string& internalSubset);
+    XmlDocumentType *CreateDocumentType(const std::string &name, const std::string &publicId, const std::string &systemId, const std::string &internalSubset);
 
     // Creates an element with the specified name.
-    XmlElement* CreateElement(const std::string& name);
+    XmlElement *CreateElement(const std::string &name);
 
     // Creates an XmlElement with the qualified name and NamespaceURI.
-    XmlElement* CreateElement(const std::string& name, const std::string& namespaceURI);
+    XmlElement *CreateElement(const std::string &name, const std::string &namespaceURI);
 
     // Creates an element with the specified Prefix, LocalName, and NamespaceURI.
-    XmlElement* CreateElement(const std::string& prefix, const std::string& localName, const std::string& namespaceURI);
+    XmlElement *CreateElement(const std::string &prefix, const std::string &localName, const std::string &namespaceURI);
 
     // Creates an XmlNode with the specified node type, Name, and NamespaceURI.
-    XmlNode* CreateNode(const std::string& nodeType, const std::string& name, const std::string& namespaceURI);
+    XmlNode *CreateNode(const std::string &nodeType, const std::string &name, const std::string &namespaceURI);
 
     // Creates an XmlNode with the specified XmlNodeType, Name, and NamespaceURI.
-    XmlNode* CreateNode(XmlNodeType::Type nodeType, const std::string& name, const std::string& namespaceURI);
+    XmlNode *CreateNode(XmlNodeType::Type nodeType, const std::string &name, const std::string &namespaceURI);
 
     // Creates a XmlNode with the specified XmlNodeType, Prefix, Name, and NamespaceURI.
-    XmlNode* CreateNode(XmlNodeType::Type nodeType, const std::string& prefix, const std::string& localName, const std::string& namespaceURI);
+    XmlNode *CreateNode(XmlNodeType::Type nodeType, const std::string &prefix, const std::string &localName, const std::string &namespaceURI);
 
     // Creates an XmlProcessingInstruction with the specified name and data.
-    XmlProcessingInstruction* CreateProcessingInstruction(const std::string& target, const std::string& data);
-/*
+    XmlProcessingInstruction *CreateProcessingInstruction(const std::string &target, const std::string &data);
+    /*
     // Creates an XmlSignificantWhitespace node.
     CreateSignificantWhitespace
 */
     // Creates an XmlText with the specified text.
-    XmlText* CreateTextNode(const std::string& text = "");
-/*
+    XmlText *CreateTextNode(const std::string &text = "");
+    /*
     // Creates an XmlWhitespace node.
     CreateWhitespace
 
@@ -120,13 +117,14 @@ public:
     CreateXmlDeclaration
 */
 private:
-    XmlName AddXmlName(const std::string& prefix, const std::string& localName, const std::string& ns);
+    XmlName *AddXmlName(const std::string &prefix, const std::string &localName, const std::string &ns);
 
+    std::vector<XmlName *> _nameTable;
     friend class XmlElement;
     friend class XmlAttribute;
 };
 
-}
-}
+} // namespace Xml
+} // namespace System
 
 #endif // XMLDOCUMENT_H

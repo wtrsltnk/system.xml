@@ -3,44 +3,41 @@
 
 #include <string>
 
-namespace System
-{
-namespace Xml
-{
+namespace System {
+namespace Xml {
 
 class XmlName
 {
 public:
-    XmlName(const std::string& prefix, const std::string& localName, const std::string& ns, class XmlDocument* ownerDocument);
+    XmlName(const std::string &prefix, const std::string &localName, const std::string &ns, class XmlDocument *ownerDocument);
     virtual ~XmlName();
 
     // Properties
 public:
     // Gets the local name of the node, when overridden in a derived class.
-    const std::string& LocalName() const;
+    const std::string &LocalName() const;
 
     // Gets the qualified name of the node, when overridden in a derived class.
-    const std::string& Name() const;
+    const std::string &Name() const;
 
     // Gets the namespace URI of this node.
-    const std::string& NamespaceURI() const;
+    const std::string &NamespaceURI() const;
 
     // Gets the XmlDocument to which the current node belongs.
-    class XmlDocument* OwnerDocument();
+    class XmlDocument *OwnerDocument();
 
     // Gets the namespace prefix of this node.
-    const std::string& Prefix() const;
+    const std::string &Prefix() const;
 
 private:
     std::string _prefix;
     std::string _localName;
     std::string _ns;
     std::string _name;
-    class XmlDocument* _ownerDocument;
-
+    class XmlDocument *_ownerDocument;
 };
 
-}
-}
+} // namespace Xml
+} // namespace System
 
 #endif // XMLNAME_H

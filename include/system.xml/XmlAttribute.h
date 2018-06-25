@@ -43,10 +43,10 @@ public:
     virtual void SetValue(const std::string &value);
 
 protected:
-    virtual const XmlName &XmlNameProp() const;
+    virtual const XmlName *XmlNameProp() const;
 
 private:
-    XmlName _name;
+    XmlName *_name;
 };
 
 } // namespace Xml

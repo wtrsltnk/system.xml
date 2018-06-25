@@ -237,16 +237,28 @@ void XmlLoader::Load(XmlDocument &doc, std::istream &fr)
 XmlNode *XmlLoader::createNode(XmlNode *currentNode, std::string const &tagName, std::map<std::string, std::string> const &attrs)
 {
     XmlNode *newNode = nullptr;
+    std::string namespaceURI = "";
+
+    if (attrs.find("xmlns") != attrs.end())
+    {
+        namespaceURI = attrs.at("xmlns");
+    }
 
     if (tagName.find_first_of(':') == std::string::npos)
     {
-        newNode = currentNode->OwnerDocument()->CreateElement(tagName);
+        newNode = currentNode->OwnerDocument()->CreateElement("", tagName, namespaceURI);
     }
     else
     {
         std::string prefix = tagName.substr(0, tagName.find_first_of(':'));
         std::string localName = tagName.substr(tagName.find_first_of(':') + 1);
-        newNode = currentNode->OwnerDocument()->CreateElement(prefix, localName, "");
+
+        if (prefix != "")
+        {
+            // todo get namespaceURI from given prefix
+        }
+
+        newNode = currentNode->OwnerDocument()->CreateElement(prefix, localName, namespaceURI);
     }
 
     for (auto attr : attrs)

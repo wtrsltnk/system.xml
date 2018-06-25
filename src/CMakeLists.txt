@@ -13,12 +13,15 @@ add_library(system.xml
     XmlLoader.cpp
     XmlLoader.h
     XmlName.cpp
+    XmlNameTable.cpp
     XmlNode.cpp
     XmlNodeList.cpp
     XmlProcessingInstruction.cpp
     XmlText.cpp
     XmlWriter.cpp
     XmlWriter.h
+    internal/XPathParser.cpp
+    internal/XPathScanner.cpp
     )
 
 target_include_directories(system.xml
@@ -58,6 +61,7 @@ install(
         ${system.xml_SOURCE_DIR}/include/system.xml/XmlException.h
         ${system.xml_SOURCE_DIR}/include/system.xml/XmlLinkedNode.h
         ${system.xml_SOURCE_DIR}/include/system.xml/XmlName.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/XmlNameTable.h
         ${system.xml_SOURCE_DIR}/include/system.xml/XmlNode.h
         ${system.xml_SOURCE_DIR}/include/system.xml/XmlNodeList.h
         ${system.xml_SOURCE_DIR}/include/system.xml/XmlNodeType.h

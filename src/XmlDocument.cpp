@@ -1,6 +1,6 @@
 #include "XmlLoader.h"
-#include <sstream>
 #include <fstream>
+#include <sstream>
 #include <system.xml/XmlDocument.h>
 
 using namespace System::Xml;
@@ -10,7 +10,14 @@ XmlDocument::XmlDocument()
 {}
 
 XmlDocument::~XmlDocument()
-{}
+{
+    while (!_nameTable.empty())
+    {
+        auto name = _nameTable.back();
+        _nameTable.pop_back();
+        delete name;
+    }
+}
 
 XmlElement *XmlDocument::DocumentElement()
 {
@@ -101,9 +108,20 @@ XmlText *XmlDocument::CreateTextNode(const std::string &text)
     return new XmlText(this, text);
 }
 
-XmlName XmlDocument::AddXmlName(const std::string &prefix, const std::string &localName, const std::string &ns)
+XmlName *XmlDocument::AddXmlName(const std::string &prefix, const std::string &localName, const std::string &ns)
 {
-    return XmlName(prefix, localName, ns, this);
+    for (auto name : _nameTable)
+    {
+        if (name->LocalName() != localName) continue;
+        if (name->Prefix() != prefix) continue;
+        if (name->NamespaceURI() != ns) continue;
+
+        return name;
+    }
+
+    auto newName = new XmlName(prefix, localName, ns, this);
+    _nameTable.push_back(newName);
+    return newName;
 }
 
 #include <iostream>
