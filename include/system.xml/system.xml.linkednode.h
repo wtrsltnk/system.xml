@@ -1,7 +1,7 @@
-#ifndef XMLLINKEDNODE_H
-#define XMLLINKEDNODE_H
+#ifndef _SYSTEM_XML_LINKEDNODE_H_
+#define _SYSTEM_XML_LINKEDNODE_H_
 
-#include "system.xml.xmlnode.h"
+#include "system.xml.node.h"
 
 namespace System {
 namespace Xml {
@@ -36,4 +36,4 @@ private:
 } // namespace Xml
 } // namespace System
 
-#endif // XMLLINKEDNODE_H
+#endif // _SYSTEM_XML_LINKEDNODE_H_

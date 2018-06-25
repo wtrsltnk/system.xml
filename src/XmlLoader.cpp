@@ -3,11 +3,11 @@
 #include <cstring>
 #include <iostream>
 #include <locale>
-#include <system.xml/system.xml.xmlduplicateattributesfoundexception.h>
-#include <system.xml/system.xml.xmlundefinednamespacefoundexception.h>
-#include <system.xml/system.xml.xmlunexpectedcharacterexception.h>
-#include <system.xml/system.xml.xmlunexpectedclosingtagexception.h>
-#include <system.xml/system.xml.xmlunexpectedendoffileexception.h>
+#include <system.xml/system.xml.duplicateattributesfoundexception.h>
+#include <system.xml/system.xml.undefinednamespacefoundexception.h>
+#include <system.xml/system.xml.unexpectedcharacterexception.h>
+#include <system.xml/system.xml.unexpectedclosingtagexception.h>
+#include <system.xml/system.xml.unexpectedendoffileexception.h>
 
 using namespace System::Xml;
 

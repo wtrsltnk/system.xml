@@ -1,16 +1,16 @@
-#ifndef XMLDOCUMENT_H
-#define XMLDOCUMENT_H
+#ifndef _SYSTEM_XML_DOCUMENT_H_
+#define _SYSTEM_XML_DOCUMENT_H_
 
-#include "system.xml.xmlattribute.h"
-#include "system.xml.xmlcdatasection.h"
-#include "system.xml.xmlcomment.h"
-#include "system.xml.xmldocumentType.h"
-#include "system.xml.xmlelement.h"
-#include "system.xml.xmlnode.h"
-#include "system.xml.xmlnodetype.h"
-#include "system.xml.xmlprocessinginstruction.h"
-#include "system.xml.xmltext.h"
-#include "system.xml/system.xml.xmlnametable.h"
+#include "system.xml.attribute.h"
+#include "system.xml.cdatasection.h"
+#include "system.xml.comment.h"
+#include "system.xml.documentType.h"
+#include "system.xml.element.h"
+#include "system.xml.nametable.h"
+#include "system.xml.node.h"
+#include "system.xml.nodetype.h"
+#include "system.xml.processinginstruction.h"
+#include "system.xml.text.h"
 #include <string>
 
 namespace System {
@@ -127,4 +127,4 @@ private:
 } // namespace Xml
 } // namespace System
 
-#endif // XMLDOCUMENT_H
+#endif // _SYSTEM_XML_DOCUMENT_H_

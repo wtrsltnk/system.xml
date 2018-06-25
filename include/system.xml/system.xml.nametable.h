@@ -1,5 +1,5 @@
-#ifndef XMLNAMETABLE_H
-#define XMLNAMETABLE_H
+#ifndef _SYSTEM_XML_NAMETABLE_H_
+#define _SYSTEM_XML_NAMETABLE_H_
 
 #include <string>
 
@@ -47,4 +47,4 @@ public: // Methods
 } // namespace Xml
 } // namespace System
 
-#endif // XMLNAMETABLE_H
+#endif // _SYSTEM_XML_NAMETABLE_H_

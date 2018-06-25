@@ -1,5 +1,5 @@
-#include <system.xml/system.xml.xmlcdatasection.h>
-#include <system.xml/system.xml.xmldocument.h>
+#include <system.xml/system.xml.cdatasection.h>
+#include <system.xml/system.xml.document.h>
 
 using namespace System::Xml;
 

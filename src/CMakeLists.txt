@@ -49,28 +49,28 @@ install(
 install(
     FILES
         ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlattribute.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlattributecollection.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlcdatasection.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlcharacterdata.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlcomment.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmldocument.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmldocumenttype.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlduplicateattributesfoundexception.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlelement.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlexception.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmllinkednode.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlname.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlnametable.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlnode.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlnodelist.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlnodetype.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlprocessinginstruction.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmltext.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlundefinednamespacefoundexception.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlunexpectedcharacterexception.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlunexpectedclosingtagexception.h
-        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.xmlunexpectedendoffileexception.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.attribute.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.attributecollection.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.cdatasection.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.characterdata.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.comment.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.document.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.documenttype.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.duplicateattributesfoundexception.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.element.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.exception.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.linkednode.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.name.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.nametable.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.node.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.nodelist.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.nodetype.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.processinginstruction.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.text.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.undefinednamespacefoundexception.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.unexpectedcharacterexception.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.unexpectedclosingtagexception.h
+        ${system.xml_SOURCE_DIR}/include/system.xml/system.xml.unexpectedendoffileexception.h
     DESTINATION
         "include/system.xml"
     )

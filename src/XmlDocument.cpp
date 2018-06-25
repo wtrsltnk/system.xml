@@ -1,7 +1,7 @@
 #include "XmlLoader.h"
 #include <fstream>
 #include <sstream>
-#include <system.xml/system.xml.xmldocument.h>
+#include <system.xml/system.xml.document.h>
 
 using namespace System::Xml;
 

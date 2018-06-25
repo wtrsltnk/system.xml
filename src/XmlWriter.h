@@ -2,8 +2,8 @@
 #define XMLWRITER_H
 
 #include <sstream>
-#include <system.xml/system.xml.xmldocument.h>
-#include <system.xml/system.xml.xmlnode.h>
+#include <system.xml/system.xml.document.h>
+#include <system.xml/system.xml.node.h>
 
 namespace System {
 namespace Xml {

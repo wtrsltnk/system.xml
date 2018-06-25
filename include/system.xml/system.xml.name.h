@@ -1,5 +1,5 @@
-#ifndef XMLNAME_H
-#define XMLNAME_H
+#ifndef _SYSTEM_XML_NAME_H_
+#define _SYSTEM_XML_NAME_H_
 
 #include <string>
 
@@ -40,4 +40,4 @@ private:
 } // namespace Xml
 } // namespace System
 
-#endif // XMLNAME_H
+#endif // _SYSTEM_XML_NAME_H_

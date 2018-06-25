@@ -1,9 +1,9 @@
-#ifndef XMLNODE_H
-#define XMLNODE_H
+#ifndef _SYSTEM_XML_NODE_H_
+#define _SYSTEM_XML_NODE_H_
 
-#include "system.xml.xmlattributecollection.h"
-#include "system.xml.xmlnodelist.h"
-#include "system.xml.xmlnodetype.h"
+#include "system.xml.attributecollection.h"
+#include "system.xml.nodelist.h"
+#include "system.xml.nodetype.h"
 
 #include <string>
 
@@ -114,4 +114,4 @@ private:
 } // namespace Xml
 } // namespace System
 
-#endif // XMLNODE_H
+#endif // _SYSTEM_XML_NODE_H_

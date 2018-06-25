@@ -1,21 +1,20 @@
-#ifndef XMLCOMMENT_H
-#define XMLCOMMENT_H
+#ifndef _SYSTEM_XML_COMMENT_H_
+#define _SYSTEM_XML_COMMENT_H_
 
-#include "system.xml.xmlcharacterdata.h"
-#include "system.xml.xmlnodetype.h"
+#include "system.xml.characterdata.h"
+#include "system.xml.nodetype.h"
 
 #include <string>
 
-namespace System
-{
-namespace Xml
-{
+namespace System {
+namespace Xml {
 
 class XmlComment : public XmlCharacterData
 {
     friend class XmlDocument;
+
 protected:
-    XmlComment(class XmlDocument* ownerDocument, const std::string& text = "");
+    XmlComment(class XmlDocument *ownerDocument, const std::string &text = "");
 
 public:
     virtual ~XmlComment();
@@ -23,17 +22,16 @@ public:
     // Properties
 public:
     // Gets the local name of the node. (Overrides XmlNode.LocalName.)
-    const std::string& LocalName() const;
+    const std::string &LocalName() const;
 
     // Gets the qualified name of the node. (Overrides XmlNode.Name.)
-    const std::string& Name() const;
+    const std::string &Name() const;
 
     // Gets the type of the current node.
     virtual XmlNodeType::Type NodeType() { return XmlNodeType::Comment; }
-
 };
 
-}
-}
+} // namespace Xml
+} // namespace System
 
-#endif // XMLCOMMENT_H
+#endif // _SYSTEM_XML_COMMENT_H_

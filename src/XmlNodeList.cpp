@@ -1,5 +1,5 @@
-#include <system.xml/system.xml.xmldocument.h>
-#include <system.xml/system.xml.xmlnodeList.h>
+#include <system.xml/system.xml.document.h>
+#include <system.xml/system.xml.nodeList.h>
 
 using namespace System::Xml;
 

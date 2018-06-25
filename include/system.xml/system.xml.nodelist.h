@@ -1,5 +1,5 @@
-#ifndef XMLNODELIST_H
-#define XMLNODELIST_H
+#ifndef _SYSTEM_XML_NODELIST_H_
+#define _SYSTEM_XML_NODELIST_H_
 
 #include <vector>
 
@@ -31,4 +31,4 @@ public:
 } // namespace Xml
 } // namespace System
 
-#endif // XMLNODELIST_H
+#endif // _SYSTEM_XML_NODELIST_H_
