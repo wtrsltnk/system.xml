@@ -5,7 +5,7 @@
 #include <string>
 #include <winsock.h>
 
-#include <system.xml/Xml.h>
+#include <system.xml/system.xml.h>
 
 #define BUFFERSIZE 2
 

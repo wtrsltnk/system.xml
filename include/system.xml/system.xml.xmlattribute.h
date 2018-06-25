@@ -1,8 +1,8 @@
 #ifndef XMLATTRIBUTE_H
 #define XMLATTRIBUTE_H
 
-#include "XmlName.h"
-#include "XmlNode.h"
+#include "system.xml.xmlname.h"
+#include "system.xml.xmlnode.h"
 
 #include <string>
 

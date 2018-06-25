@@ -1,7 +1,7 @@
 #ifndef XMLDUPLICATEATTRIBUTESFOUNDEXCEPTION_H
 #define XMLDUPLICATEATTRIBUTESFOUNDEXCEPTION_H
 
-#include "XmlException.h"
+#include "system.xml.xmlexception.h"
 
 namespace System
 {

@@ -1,8 +1,8 @@
 #ifndef XMLPROCESSINGINSTRUCTION_H
 #define XMLPROCESSINGINSTRUCTION_H
 
-#include "XmlLinkedNode.h"
-#include "XmlNodeType.h"
+#include "system.xml.xmllinkednode.h"
+#include "system.xml.xmlnodetype.h"
 
 #include <string>
 

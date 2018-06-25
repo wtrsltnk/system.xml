@@ -1,7 +1,7 @@
 #ifndef XMLCHARACTERDATA_H
 #define XMLCHARACTERDATA_H
 
-#include "XmlLinkedNode.h"
+#include "system.xml.xmllinkednode.h"
 
 #include <string>
 

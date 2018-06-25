@@ -1,7 +1,7 @@
 #ifndef XMLUNEXPECTEDCHARACTEREXCEPTION_H
 #define XMLUNEXPECTEDCHARACTEREXCEPTION_H
 
-#include "XmlException.h"
+#include "system.xml.xmlexception.h"
 
 namespace System
 {

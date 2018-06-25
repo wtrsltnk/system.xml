@@ -1,5 +1,5 @@
-#include <system.xml/XmlDocument.h>
-#include <system.xml/XmlProcessingInstruction.h>
+#include <system.xml/system.xml.xmldocument.h>
+#include <system.xml/system.xml.xmlprocessinginstruction.h>
 
 using namespace System::Xml;
 

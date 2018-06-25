@@ -1,9 +1,9 @@
 #ifndef XMLELEMENT_H
 #define XMLELEMENT_H
 
-#include "XmlLinkedNode.h"
-#include "XmlName.h"
-#include "XmlNodeType.h"
+#include "system.xml.xmllinkednode.h"
+#include "system.xml.xmlname.h"
+#include "system.xml.xmlnodetype.h"
 
 #include <string>
 

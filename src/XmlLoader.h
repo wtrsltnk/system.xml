@@ -4,8 +4,8 @@
 #include <istream>
 #include <map>
 #include <string>
-#include <system.xml/XmlAttributeCollection.h>
-#include <system.xml/XmlDocument.h>
+#include <system.xml/system.xml.xmlattributecollection.h>
+#include <system.xml/system.xml.xmldocument.h>
 
 namespace System {
 namespace Xml {

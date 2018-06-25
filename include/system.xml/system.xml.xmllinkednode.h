@@ -1,7 +1,7 @@
 #ifndef XMLLINKEDNODE_H
 #define XMLLINKEDNODE_H
 
-#include "XmlNode.h"
+#include "system.xml.xmlnode.h"
 
 namespace System {
 namespace Xml {

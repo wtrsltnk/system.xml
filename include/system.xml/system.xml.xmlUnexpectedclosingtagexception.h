@@ -1,7 +1,7 @@
 #ifndef XMLUNEXPECTEDCLOSINGTAGEXCEPTION_H
 #define XMLUNEXPECTEDCLOSINGTAGEXCEPTION_H
 
-#include "XmlException.h"
+#include "system.xml.xmlexception.h"
 
 namespace System
 {

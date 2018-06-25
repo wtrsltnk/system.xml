@@ -1,7 +1,7 @@
 #ifndef XMLUNDEFINEDNAMESPACEFOUNDEXCEPTION_H
 #define XMLUNDEFINEDNAMESPACEFOUNDEXCEPTION_H
 
-#include "XmlException.h"
+#include "system.xml.xmlexception.h"
 
 #include <string>
 

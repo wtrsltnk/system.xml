@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
-#include <system.xml/XmlDocument.h>
-#include <system.xml/XmlException.h>
-#include <system.xml/XmlNode.h>
+#include <system.xml/system.xml.xmldocument.h>
+#include <system.xml/system.xml.xmlexception.h>
+#include <system.xml/system.xml.xmlnode.h>
 
 using namespace System::Xml;
 

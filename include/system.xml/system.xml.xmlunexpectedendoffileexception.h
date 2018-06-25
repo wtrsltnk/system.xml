@@ -1,7 +1,7 @@
 #ifndef XMLUNEXPECTEDENDOFFILEEXCEPTION_H
 #define XMLUNEXPECTEDENDOFFILEEXCEPTION_H
 
-#include "XmlException.h"
+#include "system.xml.xmlexception.h"
 
 namespace System
 {

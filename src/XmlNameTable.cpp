@@ -1,4 +1,4 @@
-#include <system.xml/XmlNameTable.h>
+#include <system.xml/system.xml.xmlnametable.h>
 
 using namespace System::Xml;
 

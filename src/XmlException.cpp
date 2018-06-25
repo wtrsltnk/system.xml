@@ -1,4 +1,4 @@
-#include <system.xml/XmlException.h>
+#include <system.xml/system.xml.xmlexception.h>
 
 using namespace System::Xml;
 

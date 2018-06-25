@@ -1,17 +1,17 @@
 #ifndef XMLDOCUMENT_H
 #define XMLDOCUMENT_H
 
-#include "XmlAttribute.h"
-#include "XmlCDataSection.h"
-#include "XmlComment.h"
-#include "XmlDocumentType.h"
-#include "XmlElement.h"
-#include "XmlNode.h"
-#include "XmlNodeType.h"
-#include "XmlProcessingInstruction.h"
-#include "XmlText.h"
+#include "system.xml.xmlattribute.h"
+#include "system.xml.xmlcdatasection.h"
+#include "system.xml.xmlcomment.h"
+#include "system.xml.xmldocumentType.h"
+#include "system.xml.xmlelement.h"
+#include "system.xml.xmlnode.h"
+#include "system.xml.xmlnodetype.h"
+#include "system.xml.xmlprocessinginstruction.h"
+#include "system.xml.xmltext.h"
+#include "system.xml/system.xml.xmlnametable.h"
 #include <string>
-#include <system.xml/XmlNameTable.h>
 
 namespace System {
 namespace Xml {

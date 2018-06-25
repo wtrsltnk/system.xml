@@ -1,8 +1,8 @@
 #ifndef XMLCDATASECTION_H
 #define XMLCDATASECTION_H
 
-#include "XmlCharacterData.h"
-#include "XmlNodeType.h"
+#include "system.xml.xmlcharacterdata.h"
+#include "system.xml.xmlnodetype.h"
 
 #include <string>
 

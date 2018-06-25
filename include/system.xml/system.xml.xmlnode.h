@@ -1,9 +1,9 @@
 #ifndef XMLNODE_H
 #define XMLNODE_H
 
-#include "XmlAttributeCollection.h"
-#include "XmlNodeList.h"
-#include "XmlNodeType.h"
+#include "system.xml.xmlattributecollection.h"
+#include "system.xml.xmlnodelist.h"
+#include "system.xml.xmlnodetype.h"
 
 #include <string>
 

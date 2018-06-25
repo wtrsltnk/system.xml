@@ -1,8 +1,8 @@
-#ifndef XMLCOMMENT_H
-#define XMLCOMMENT_H
+#ifndef XMLTEXT_H
+#define XMLTEXT_H
 
-#include "XmlCharacterData.h"
-#include "XmlNodeType.h"
+#include "system.xml.xmlcharacterdata.h"
+#include "system.xml.xmlnodetype.h"
 
 #include <string>
 
@@ -11,14 +11,14 @@ namespace System
 namespace Xml
 {
 
-class XmlComment : public XmlCharacterData
+class XmlText : public XmlCharacterData
 {
     friend class XmlDocument;
 protected:
-    XmlComment(class XmlDocument* ownerDocument, const std::string& text = "");
+    XmlText(class XmlDocument* ownerDocument, const std::string& text = "");
 
 public:
-    virtual ~XmlComment();
+    virtual ~XmlText();
 
     // Properties
 public:
@@ -29,11 +29,11 @@ public:
     const std::string& Name() const;
 
     // Gets the type of the current node.
-    virtual XmlNodeType::Type NodeType() { return XmlNodeType::Comment; }
+    virtual XmlNodeType::Type NodeType() { return XmlNodeType::Text; }
 
 };
 
 }
 }
 
-#endif // XMLCOMMENT_H
+#endif // XMLTEXT_H
